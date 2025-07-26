@@ -23,3 +23,46 @@ This powerful automation workflow, built with [n8n](https://n8n.io/), keeps you 
 ---
 
 ## 📂 Project Structure  
+
+n8n-gmail-whatsapp-alert/
+├── README.md              # Project documentation
+├── workflow.json          # n8n workflow configuration
+├── assets/                # Static files
+│   └── screenshot.png     # Workflow screenshot
+└── .gitignore             # Git ignore file
+
+
+
+---
+
+## ⚡ Setup Instructions  
+
+### 1. Clone the Repository  
+```bash  
+git clone https://github.com/YOUR-USERNAME/n8n-gmail-whatsapp-alert.git  
+cd n8n-gmail-whatsapp-alert
+
+### 2. Install n8n (if self-hosted)
+npm install -g n8n  
+n8n
+
+### 3. Import the Workflow
+. Open your n8n instance (Cloud or Self-hosted)
+. Go to Workflows > Import Workflow
+. Select workflow.json from the cloned repository
+
+### 4. Configure Credentials
+#### Gmail IMAP
+
+Enable IMAP in Gmail Settings
+If 2FA is enabled, generate an App Password
+Add your Gmail IMAP credentials in n8n
+
+#### Twilio WhatsApp API
+
+. Sign up at Twilio
+. Obtain your:
+  . Account SID
+  . Auth Token
+  . WhatsApp-enabled Twilio Number
+. Configure these in the n8n Twilio node
