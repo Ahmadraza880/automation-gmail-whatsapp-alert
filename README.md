@@ -1,69 +1,67 @@
 📬 n8n Gmail to WhatsApp Alert Automation
-This project is an automation workflow built using n8n that:
+🚀 Stay in the Loop, Instantly!This sleek automation workflow, powered by n8n, keeps you updated by:  
 
-Listens for new emails from Gmail using IMAP
-Filters for specific subjects (e.g., "Security alert")
-Sends a notification to WhatsApp using Twilio API
-
-
-⚙️ Tech Stack
-
-n8n (Cloud or Self-hosted)
-Gmail IMAP Integration
-Twilio WhatsApp API
+📧 Monitoring your Gmail inbox via IMAP for new emails  
+🔍 Filtering emails by subject (e.g., "Security alert")  
+💬 Sending instant WhatsApp notifications using the Twilio API
 
 
-🚀 Features
+🛠️ Tech Stack
 
-✅ Triggers on incoming Gmail messages
-✅ Filters messages by subject, sender, or date
-✅ Sends real-time WhatsApp notifications to your number
+n8n: Workflow automation (Cloud or Self-hosted)  
+Gmail IMAP: Real-time email monitoring  
+Twilio WhatsApp API: Instant notifications
 
 
-🔧 Setup Instructions
-1. Clone this Repository
-git clone https://github.com/YOUR-USERNAME/n8n-gmail-whatsapp-alert.git
-cd n8n-gmail-whatsapp-alert
+✨ Features
+
+✅ Real-time Gmail monitoring  
+✅ Smart filtering by subject, sender, or date  
+✅ Instant WhatsApp alerts to your phone
+
+
+⚡ Quick Setup
+1. Clone the Repository
+git clone https://github.com/YOUR-USERNAME/n8n-gmail-whatsapp-alert.git  
+cd n8n-gmail-whatsapp-alert  
 
 2. Install n8n (if self-hosted)
-npm install -g n8n
-n8n
+npm install -g n8n  
+n8n  
 
-3. Import Workflow
+3. Import the Workflow
 
-Open n8n
-Click on Import Workflow and select workflow.json
+Open your n8n instance  
+Navigate Bool to Import Workflow and select workflow.json
 
-🛠️ Required Credentials
-Gmail IMAP
+4. Configure Credentials
+Gmail IMAP  
 
-Enable IMAP in Gmail settings
-Create an App Password if 2FA is enabled
+Enable IMAP in Gmail settings  
+Generate an App Password (required if 2FA is enabled)
 
-Twilio
+Twilio  
 
-Sign up at Twilio
-Get your:
-Account SID
-Auth Token
+Sign up at Twilio  
+Grab your:  
+Account SID  
+Auth Token  
 WhatsApp-enabled Twilio Number
 
 
 
 
-📷 Screenshot
-<img width="810" height="400" alt="image" src="https://github.com/user-attachments/assets/908a44b0-3e49-4cf5-9035-259762a85214" />
-
-
-📬 Example WhatsApp Message
-📧 New Email Alert!
-From: Google
-Subject: Security alert
-Date: 2025-07-26
+📷 Preview
+  
+Example WhatsApp Notification  
+📧 New Email Alert!  
+From: Google  
+Subject: Security alert  
+Date: 2025-07-26  
 
 
 📄 License
-MIT
+MIT  
 
-🤝 Let's Connect
-Want help setting this up for your business? Contact me on Fiverr 💼
+🤝 Get in Touch
+Need help setting this up or want a custom automation? Hire me on Fiverr! 💼
