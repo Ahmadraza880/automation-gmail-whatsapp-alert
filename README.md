@@ -41,6 +41,7 @@ n8n-gmail-whatsapp-alert/
 ```bash  
 git clone https://github.com/YOUR-USERNAME/n8n-gmail-whatsapp-alert.git  
 cd n8n-gmail-whatsapp-alert
+```bash
 
 ### 2. Install n8n (if self-hosted)
 npm install -g n8n  
