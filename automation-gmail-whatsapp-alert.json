@@ -1,0 +1,123 @@
+{
+  "name": "My workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyHour"
+            }
+          ]
+        },
+        "filters": {}
+      },
+      "type": "n8n-nodes-base.gmailTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -304,
+        -96
+      ],
+      "id": "0735266a-3748-4a46-894e-102a37d7ec6d",
+      "name": "Gmail Trigger",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "NpjdiE65qinw03KH",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "={\n  \"parameters\": {\n    \"values\": {\n      \"string\": [\n        {\n          \"name\": \"subject\",\n          \"value\": \"={{ $json.Subject }}\"\n        },\n        {\n          \"name\": \"from\",\n          \"value\": \"={{ $json.From }}\"\n        },\n        {\n          \"name\": \"date\",\n          \"value\": \"={{ $json.internalDate }}\"\n        }\n      ]\n    }\n  },\n  \"name\": \"Format Email\"\n}\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -80,
+        32
+      ],
+      "id": "d9e814ac-a93b-4b1a-802e-6625fd10abeb",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.twilio.com/2010-04-01/Accounts/ACadbcc03c2a6d5375650d679880a95c58/Messages.json",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBasicAuth",
+        "sendBody": true,
+        "contentType": "form-urlencoded",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "=From",
+              "value": "=whatsapp:+14155238886"
+            },
+            {
+              "name": "=To",
+              "value": "=whatsapp:+923186158031"
+            },
+            {
+              "name": "Body",
+              "value": "=New email from {{ $json.parameters.values.string[1].value }}\nwith subject {{ $json.parameters.values.string[0].value }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        176,
+        -80
+      ],
+      "id": "6a22a149-a73d-47cc-b010-ae5980d06840",
+      "name": "HTTP Request",
+      "credentials": {
+        "httpBasicAuth": {
+          "id": "Ec1KoDbaxUcmglDs",
+          "name": "Unnamed credential"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Gmail Trigger": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "d3dbd6c8-8af8-41cb-9d7b-6c3f0a56b3d2",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "c21559ddd0b4ba88f4219ad5a933550dcf5a51ede3270a9a2c37a540bdfe8f7f"
+  },
+  "id": "ICewmGCV5t23MDlH",
+  "tags": []
+}
