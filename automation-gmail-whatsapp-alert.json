@@ -45,7 +45,7 @@
     {
       "parameters": {
         "method": "POST",
-        "url": "https://api.twilio.com/2010-04-01/Accounts/ACadbcc03c2a6d5375650d679880a95c58/Messages.json",
+        "url": "https://api.twilio.com/2010-04-01/Accounts/youraccountSID/Messages.json",
         "authentication": "genericCredentialType",
         "genericAuthType": "httpBasicAuth",
         "sendBody": true,
@@ -58,7 +58,7 @@
             },
             {
               "name": "=To",
-              "value": "=whatsapp:+923186158031"
+              "value": "=whatsapp:+your number"
             },
             {
               "name": "Body",
